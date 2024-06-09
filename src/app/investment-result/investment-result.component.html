@@ -10,40 +10,20 @@
     </thead>
 
     <tbody>
-        <tr>
-            <td>
-                1
-            </td>
-            <td>
-                2
-            </td>
-            <td>
-                3
-            </td>
-            <td>
-                4
-            </td>
-            <td>
-                5
-            </td>
-        </tr>
+        
+            @if (investment?.annualData){
+                @for (data of investment!.annualData; track data.year){
+                    <tr>
+                        <td> {{ data.year }} </td>
+                        <td> {{ data.interest }} </td>
+                        <td> {{ data.valueEndOfYear }} </td>
+                        <td> {{ data.annualInvestment }} </td>
+                        <td> {{ data.totalInterest }} </td>
+                        <td> {{ data.totalAmountInvested }} </td>
+                    </tr>
+                } 
+            }
+           
 
-        <tr>
-            <td>
-                1
-            </td>
-            <td>
-                2
-            </td>
-            <td>
-                3
-            </td>
-            <td>
-                4
-            </td>
-            <td>
-                5
-            </td>
-        </tr>
     </tbody>
 </table>

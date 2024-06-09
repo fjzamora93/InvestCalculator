@@ -2,7 +2,7 @@
 
 <app-header/>
 
-<app-user-input/>
+<app-user-input (calculate)="onCalculateInvestment($event)"/>
 
-<app-investment-result/>
+<app-investment-result [investment]="investmentService"/>
 

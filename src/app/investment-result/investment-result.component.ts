@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Investment } from './investment.model';
+import { InvestmentService } from './investment.service';
 
 @Component({
   selector: 'app-investment-result',
@@ -8,5 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './investment-result.component.css'
 })
 export class InvestmentResultComponent {
+    @Input() investment?: InvestmentService | null = null;
+
+
 
 }
