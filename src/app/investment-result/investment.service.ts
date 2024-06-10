@@ -1,29 +1,44 @@
-import { Investment } from "./investment.model";
+
 
 export class InvestmentService {
 
+    private initialInvestment: number;
+    private annualInvestment: number;
+    private expectedReturn: number;
+    private duration: number;
+
     public annualData: any[] = [];
 
-    calculateInvestmentResults(investment: Investment) {
+    constructor(
+        initialInvestment: number = 0, annualInvestment: number = 0, expectedReturn: number = 0, duration: number = 0
+    ) {
+        this.initialInvestment = initialInvestment;
+        this.annualInvestment = annualInvestment;
+        this.expectedReturn = expectedReturn;
+        this.duration = duration;
+    }
+
+    calculateInvestmentResults() {
         const annualData = [];
-        let investmentValue = investment.initialInvestment;
+        let investmentValue = this.initialInvestment;
       
-        for (let i = 0; i < investment.duration; i++) {
+        for (let i = 0; i < this.duration; i++) {
             const year = i + 1;
-            const interestEarnedInYear = investmentValue * (investment.expectedReturn / 100);
-            investmentValue += interestEarnedInYear + investment.annualInvestment;
-            const totalInterest = investmentValue - investment.annualInvestment * year - investment.initialInvestment;
+            const interestEarnedInYear = investmentValue * (this.expectedReturn / 100);
+            investmentValue += interestEarnedInYear + this.annualInvestment;
+            const totalInterest = investmentValue - this.annualInvestment * year - this.initialInvestment;
           
             annualData.push({
                 year: year,
                 interest: interestEarnedInYear,
                 valueEndOfYear: investmentValue,
-                annualInvestment: investment.annualInvestment,
+                annualInvestment: this.annualInvestment,
                 totalInterest: totalInterest,
-                totalAmountInvested: investment.initialInvestment + investment.annualInvestment * year,
+                totalAmountInvested: this.initialInvestment + this.annualInvestment * year,
             });
         }
         this.annualData = annualData;
+        return annualData;
       }
 
 

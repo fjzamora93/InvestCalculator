@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Investment } from './investment.model';
 import { InvestmentService } from './investment.service';
 
 @Component({
