@@ -1,4 +1,4 @@
-<form>
+<form (ngSubmit)="onCalculate()">
    
         <label for="initial-investment">Initial Investment</label>
         <input [(ngModel)]="enteredInitialInvestment" class="input-group" type="text" id="initial-investment"  name="initial-investment">
@@ -13,6 +13,6 @@
         <input [(ngModel)]="enteredDuration" class="input-group" type="number" id="duration"  name="duration">
    
 
-    <button (click)="onCalculate()">Calcular</button>
+        <button type="submit">Calcular</button>
     
 </form>>

@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { InvestmentResultComponent } from './investment-result/investment-result.component';
 import { UserInputComponent } from './user-input/user-input.component';
+
 import { InvestmentService } from './investment-result/investment.service';
 
 @Component({
@@ -12,12 +13,12 @@ import { InvestmentService } from './investment-result/investment.service';
 })
 
 export class AppComponent {
-    investmentService?: InvestmentService;
-    
+    investment?: InvestmentService;
+
     onCalculateInvestment(investment: InvestmentService){
-        this.investmentService = investment;
-        this.investmentService.calculateInvestmentResults();
-        console.log(`Recibiendo Inversión en el padre: ${JSON.stringify(this.investmentService)}`);
+        this.investment = investment;
+        this.investment.calculateInvestmentResults();
+        console.log(`Recibiendo Inversión en el padre: ${JSON.stringify(investment)}`);
     }
 
 }

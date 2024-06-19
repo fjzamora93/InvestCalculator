@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
 import { InvestmentService } from '../investment-result/investment.service';
 
 
@@ -18,15 +19,15 @@ export class UserInputComponent {
     enteredDuration: number = 0;
     
     onCalculate(){
-        const investment = new InvestmentService(
+        const investmentService = new InvestmentService(
             Number(this.enteredInitialInvestment),
             Number(this.enteredAnualInvestment),
             Number(this.enteredExpectedReturn),
             Number(this.enteredDuration)
         );
-        console.log(investment);
+        console.log(investmentService);
 
-        this.calculate.emit(investment);
+        this.calculate.emit(investmentService);
     }
 
 

@@ -1,7 +1,7 @@
 
 
-export class InvestmentService {
 
+export class InvestmentService {
     private initialInvestment: number;
     private annualInvestment: number;
     private expectedReturn: number;
@@ -30,10 +30,10 @@ export class InvestmentService {
           
             annualData.push({
                 year: year,
-                interest: interestEarnedInYear,
-                valueEndOfYear: investmentValue,
-                annualInvestment: this.annualInvestment,
-                totalInterest: totalInterest,
+                interest: interestEarnedInYear.toFixed(2),
+                valueEndOfYear: investmentValue.toFixed(2),
+                annualInvestment: this.annualInvestment.toFixed(2),
+                totalInterest: totalInterest.toFixed(2),
                 totalAmountInvested: this.initialInvestment + this.annualInvestment * year,
             });
         }
