@@ -4,12 +4,14 @@ import { InvestmentResultComponent } from './investment-result/investment-result
 import { UserInputComponent } from './user-input/user-input.component';
 
 import { InvestmentService } from './investment-result/investment.service';
+import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostCreateComponent } from './posts/post-create/post-create.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [HeaderComponent, InvestmentResultComponent, UserInputComponent]
+  imports: [HeaderComponent, InvestmentResultComponent, UserInputComponent, PostCreateComponent, PostListComponent ]
 })
 
 export class AppComponent {
